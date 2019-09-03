@@ -49,7 +49,7 @@ namespace Northwind.WebUI
 
             // Add DbContext using SQL Server Provider
             services.AddDbContext<INorthwindDbContext, NorthwindDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("NorthwindDatabase")));
+                options.UseNpgsql(Configuration.GetConnectionString("NorthwindDatabase")));
 
             services
                 .AddMvc(options => options.Filters.Add(typeof(CustomExceptionFilterAttribute)))
