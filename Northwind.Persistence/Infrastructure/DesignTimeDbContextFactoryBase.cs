@@ -47,7 +47,7 @@ namespace Northwind.Persistence.Infrastructure
 
             var optionsBuilder = new DbContextOptionsBuilder<TContext>();
 
-            optionsBuilder.UseNpgsql(connectionString);
+            optionsBuilder.UseMySql(connectionString);
 
             return CreateNewInstance(optionsBuilder.Options);
         }
