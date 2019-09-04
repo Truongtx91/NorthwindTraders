@@ -20,17 +20,17 @@ namespace Northwind.Persistence.Configurations
 
             builder.Property(e => e.QuantityPerUnit).HasMaxLength(20);
 
-            builder.Property(e => e.ReorderLevel).HasDefaultValueSql("((0))");
+            builder.Property(e => e.ReorderLevel).HasDefaultValueSql("0");
 
             builder.Property(e => e.SupplierId).HasColumnName("SupplierID");
 
             builder.Property(e => e.UnitPrice)
-                .HasColumnType("money")
-                .HasDefaultValueSql("((0))");
+                .HasColumnType("decimal(5,2)")
+                .HasDefaultValueSql("0");
 
-            builder.Property(e => e.UnitsInStock).HasDefaultValueSql("((0))");
+            builder.Property(e => e.UnitsInStock).HasDefaultValueSql("0");
 
-            builder.Property(e => e.UnitsOnOrder).HasDefaultValueSql("((0))");
+            builder.Property(e => e.UnitsOnOrder).HasDefaultValueSql("0");
 
             builder.HasOne(d => d.Category)
                 .WithMany(p => p.Products)

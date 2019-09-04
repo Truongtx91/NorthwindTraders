@@ -19,8 +19,7 @@ namespace Northwind.Persistence.Configurations
             builder.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
 
             builder.Property(e => e.Freight)
-                .HasColumnType("money")
-                .HasDefaultValueSql("((0))");
+                .HasColumnType("decimal(5,2)");
 
             builder.Property(e => e.OrderDate).HasColumnType("datetime");
 

@@ -16,9 +16,9 @@ namespace Northwind.Persistence.Configurations
 
             builder.Property(e => e.ProductId).HasColumnName("ProductID");
 
-            builder.Property(e => e.Quantity).HasDefaultValueSql("((1))");
+            builder.Property(e => e.Quantity).HasDefaultValueSql("1");
 
-            builder.Property(e => e.UnitPrice).HasColumnType("money");
+            builder.Property(e => e.UnitPrice).HasColumnType("decimal(5,2)");
 
             builder.HasOne(d => d.Order)
                 .WithMany(p => p.OrderDetails)
